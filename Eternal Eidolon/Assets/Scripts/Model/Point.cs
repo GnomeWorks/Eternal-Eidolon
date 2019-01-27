@@ -42,21 +42,30 @@ public struct Point
 	{
 		return !(a == b);
 	}
-
-	public override bool Equals(Object obj) 
-	{
-		//Check for null and compare run-time types.
-		if ((obj == null) || ! this.GetType().Equals(obj.GetType())) 
-			return false;
-		else 
-		{ 
-			Point p = (Point) obj; 
-			return (this.x == p.x) && (this.y == p.y);
-		}   
-	}
 	
-	public override int GetHashCode() 
-	{
-		return (x << 2) ^ y;
-	}
+	public override bool Equals (object obj)
+    {
+      if (obj is Point)
+      {
+        Point p = (Point)obj;
+        return this.x == p.x && this.y == p.y;
+      }
+      return false;
+    }
+    
+	public bool Equals (Point p)
+    {
+      return this.x == p.x && this.y == p.y;
+    }
+    
+	public override int GetHashCode()
+    {
+      return this.x ^ this.y;
+    }
+	
+	// for debug purposes
+	public override string ToString ()
+    {
+      return string.Format ("({0},{1})", this.x, this.y);
+    }
 }
