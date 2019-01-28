@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.IO;
 
 public class BoardCreator : MonoBehaviour 
 {
@@ -126,4 +128,65 @@ public class BoardCreator : MonoBehaviour
 			DestroyImmediate(t.gameObject);
 		}
     }
+
+
+	public void Grow()
+	{
+		GrowSingle(pos);
+	}
+
+	public void Shrink()
+	{
+		ShrinkSingle(pos);
+	}
+
+	public void UpdateMarker()
+	{
+		Tile t = tiles.ContainsKey(pos) ? tiles[pos] : null;
+		marker.localPosition = t != null ? t.center : new Vector3(pos.x, 0, pos.y);
+	}
+
+	public void Clear()
+	{
+		for(int i = transform.childCount - 1; i >= 0; i--)
+			DestroyImmediate(transform.GetChild(i).gameObject);
+
+		tiles.Clear();
+	}
+
+	public void Save()
+	{
+		string filePath = Application.dataPath + "/Resources/Levels";
+
+		if(!Directory.Exists(filePath))
+			CreateSaveDirectory();
+
+		LevelData board = ScriptableObject.CreateInstance<LevelData>();
+
+		board.tiles = new List<Vector3>(tiles.Count);
+
+		foreach ( Tile t in tiles.Values )
+			board.tiles.Add ( new Vector3 ( t.pos.x, t.height, t.pos.y ) );
+
+		string fileName = string.Format("Assets/Resources/Levels/{1}.asset", 
+																		filePath,
+																		name);
+
+		AssetDatabase.CreateAsset(board, fileName);
+	}
+
+	private void CreateSaveDirectory()
+	{
+		string filePath = Application.dataPath + "/Resources";
+
+		if(!Directory.Exists(filePath))
+			AssetDatabase.CreateFolder("Assets", "Resources");
+
+		filePath += "/Levels";
+
+		if(!Directory.Exists(filePath))
+			AssetDatabase.CreateFolder("Assets/Resources", "Levels");
+
+		AssetDatabase.Refresh();
+	}
 }
