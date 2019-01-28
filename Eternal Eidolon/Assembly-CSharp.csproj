@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Model\LevelData.cs" />
      <Compile Include="Assets\Scripts\Model\Point.cs" />
+     <Compile Include="Assets\Scripts\Preproduction\BoardCreator.cs" />
+     <Compile Include="Assets\Scripts\VMC\Tile.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Codeland/Eternal Eidolon/Eternal-Eidolon/Eternal Eidolon/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
