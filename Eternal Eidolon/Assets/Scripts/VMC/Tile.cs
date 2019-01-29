@@ -7,6 +7,11 @@ public class Tile : MonoBehaviour
 	public const float stepHeight = .25f;
 	public Point pos;
 	public int height;
+	public GameObject content;
+
+	// used for path-finding
+	[HideInInspector] public Tile prev;
+    [HideInInspector] public int distance;
 
 	// Use this for initialization
 	void Start () 
