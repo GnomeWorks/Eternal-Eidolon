@@ -10,8 +10,8 @@ public class CameraRig : MonoBehaviour
 	Quaternion targetRot;
 	Quaternion originRot;
 	
-	float lerpTime = .5f;
-	float curLerpTime = 0f;
+	//float lerpTime = .5f;
+	//float curLerpTime = 0f;
 	bool rotatingMapQ = false;
 	bool rotatingMapE = false;
 
@@ -24,7 +24,7 @@ public class CameraRig : MonoBehaviour
 	{
 		// want to handle camera rotation... looking to use "q" and "e" for this, for now
 
-		if(Input.GetKeyDown(KeyCode.Q) && !rotatingMapQ && !rotatingMapE && curLerpTime == 0f)
+		if(Input.GetKeyDown(KeyCode.Q) && !rotatingMapQ && !rotatingMapE /*&& curLerpTime == 0f*/)
 		{
 			targetVec = _transform.eulerAngles;
 			targetVec.y += 90f;
@@ -35,7 +35,7 @@ public class CameraRig : MonoBehaviour
 
 			rotatingMapQ = true;
 		}
-		else if(Input.GetKeyDown(KeyCode.E) && !rotatingMapQ && !rotatingMapE && curLerpTime == 0f)
+		else if(Input.GetKeyDown(KeyCode.E) && !rotatingMapQ && !rotatingMapE /*&& curLerpTime == 0f*/)
 		{
 			targetVec = _transform.eulerAngles;
 			targetVec.y -= 90f;
