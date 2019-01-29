@@ -29,7 +29,10 @@ public class InputController : MonoBehaviour
 		if (x != 0 || y != 0)
 		{
 			if (moveEvent != null)
-			moveEvent(this, new InfoEventArgs<Point>(new Point(x, y)));
+				moveEvent(this, new InfoEventArgs<Point>(new Point(x, y)));
+
+			//Debug.Log("Horiz - " + Input.GetAxisRaw("Horizontal"));
+			//Debug.Log(" Vert - " + Input.GetAxisRaw("Vertical"));
 		}
 		
 		for (int i = 0; i < NUM_FIRE_BUTTONS; ++i)
