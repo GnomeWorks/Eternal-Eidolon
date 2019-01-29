@@ -169,8 +169,8 @@ public class BoardCreator : MonoBehaviour
 			board.tiles.Add ( new Vector3 ( t.pos.x, t.height, t.pos.y ) );
 
 		string fileName = string.Format("Assets/Resources/Levels/{1}.asset", 
-																		filePath,
-																		name);
+										filePath,
+										name);
 
 		AssetDatabase.CreateAsset(board, fileName);
 	}
@@ -188,5 +188,20 @@ public class BoardCreator : MonoBehaviour
 			AssetDatabase.CreateFolder("Assets/Resources", "Levels");
 
 		AssetDatabase.Refresh();
+	}
+
+	public void Load()
+	{
+		Clear();
+
+		if(levelData == null)
+			return;
+
+		foreach(Vector3 v in levelData.tiles)
+		{
+			Tile t = Create();
+			t.Load(v);
+			tiles.Add(t.pos, t);
+		}
 	}
 }
