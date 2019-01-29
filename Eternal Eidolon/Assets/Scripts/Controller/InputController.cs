@@ -25,7 +25,7 @@ public class InputController : MonoBehaviour
 	{
 		int x = _hor.Update();
 		int y = _ver.Update();
-		
+
 		if (x != 0 || y != 0)
 		{
 			if (moveEvent != null)
@@ -63,13 +63,14 @@ class Repeater
 	{
 		int retValue = 0;
 		int value = Mathf.RoundToInt( Input.GetAxisRaw(_axis) );
+
 		if (value != 0)
 		{
 			if (Time.time > _next)
 			{
-			retValue = value;
-			_next = Time.time + (_hold ? rate : threshold);
-			_hold = true;
+				retValue = value;
+				_next = Time.time + (_hold ? rate : threshold);
+				_hold = true;
 			}
 		}
 		else

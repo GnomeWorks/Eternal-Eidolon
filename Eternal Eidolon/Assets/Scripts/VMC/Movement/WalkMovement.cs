@@ -7,7 +7,8 @@
 		protected override bool ExpandSearch (Tile from, Tile to)
 		{
 			// Skip if the distance in height between the two tiles is more than the unit can jump
-			if ((Mathf.Abs(from.height - to.height) > jumpHeight))
+			//if ((Mathf.Abs(from.height - to.height) > jumpHeight))
+			if (( (to.height - from.height) > jumpHeight))
 				return false;
 			
 			// Skip if the tile is occupied by an enemy
