@@ -53,9 +53,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Common\State Machine\State.cs" />
+     <Compile Include="Assets\Scripts\Common\State Machine\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\Controller\Battle States\BattleState.cs" />
+     <Compile Include="Assets\Scripts\Controller\Battle States\InitBattleState.cs" />
+     <Compile Include="Assets\Scripts\Controller\Battle States\MoveTargetState.cs" />
+     <Compile Include="Assets\Scripts\Controller\BattleController.cs" />
+     <Compile Include="Assets\Scripts\Controller\InputController.cs" />
+     <Compile Include="Assets\Scripts\EventArgs\InfoEventArgs.cs" />
      <Compile Include="Assets\Scripts\Model\LevelData.cs" />
      <Compile Include="Assets\Scripts\Model\Point.cs" />
      <Compile Include="Assets\Scripts\Preproduction\BoardCreator.cs" />
+     <Compile Include="Assets\Scripts\VMC\Board.cs" />
+     <Compile Include="Assets\Scripts\VMC\CameraRig.cs" />
      <Compile Include="Assets\Scripts\VMC\Tile.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Codeland/Eternal Eidolon/Eternal-Eidolon/Eternal Eidolon/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
