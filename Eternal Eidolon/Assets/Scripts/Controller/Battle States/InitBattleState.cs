@@ -19,7 +19,9 @@ public class InitBattleState : BattleState
 
 		yield return null;
 		
-		owner.ChangeState<SelectUnitState>();
+		//owner.ChangeState<SelectUnitState>();
+
+		owner.ChangeState<CutSceneState>();
 	}
 
 	void SpawnTestUnits ()
