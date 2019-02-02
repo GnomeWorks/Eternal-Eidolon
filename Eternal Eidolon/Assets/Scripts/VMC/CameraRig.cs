@@ -14,6 +14,7 @@ public class CameraRig : MonoBehaviour
 	//float curLerpTime = 0f;
 	bool rotatingMapQ = false;
 	bool rotatingMapE = false;
+	float distRemain = 90f;
 
 	void Awake ()
 	{
@@ -51,28 +52,23 @@ public class CameraRig : MonoBehaviour
 
 		if(rotatingMapQ || rotatingMapE)
 		{
-			_transform.eulerAngles = targetVec;
-			rotatingMapQ = false;
-			rotatingMapE = false;
+			Vector3 newAngle = _transform.eulerAngles;
 
-			/*
-			curLerpTime += Time.deltaTime;
-			_transform.eulerAngles = Vector3.Lerp(_transform.eulerAngles, targetVec, curLerpTime / lerpTime);
-			//_transform.rotation = Quaternion.Slerp(_transform.rotation, targetRot, curLerpTime / lerpTime);
-			//_transform.rotation = Quaternion.Lerp(_transform.rotation, targetRot, curLerpTime / lerpTime);
-			//_transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRot, speed * Time.deltaTime);
+			if(rotatingMapQ)
+				newAngle.y += speed;
+			else if(rotatingMapE)
+				newAngle.y -= speed;
 
-			//Debug.Log(_transform.eulerAngles.y + ", " + targetVec.y);
+			distRemain -= speed;
 
-			if(curLerpTime >= lerpTime)
+			_transform.eulerAngles = newAngle;
+
+			if(distRemain <= 0f)
 			{
-				curLerpTime = 0f;
 				rotatingMapQ = false;
 				rotatingMapE = false;
-
-				Debug.Log("friggin done spinning");
+				distRemain = 90f;
 			}
-			*/
 		}
 	}
 }
