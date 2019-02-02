@@ -79,8 +79,10 @@
      <Compile Include="Assets\Scripts\EventArgs\InfoEventArgs.cs" />
      <Compile Include="Assets\Scripts\Extensions\DirectionsExtensions.cs" />
      <Compile Include="Assets\Scripts\Extensions\RectTransformAnimationExtensions.cs" />
+     <Compile Include="Assets\Scripts\Model\ConversationData.cs" />
      <Compile Include="Assets\Scripts\Model\LevelData.cs" />
      <Compile Include="Assets\Scripts\Model\Point.cs" />
+     <Compile Include="Assets\Scripts\Model\SpeakerData.cs" />
      <Compile Include="Assets\Scripts\Preproduction\BoardCreator.cs" />
      <Compile Include="Assets\Scripts\Temp\AnchorTests.cs" />
      <Compile Include="Assets\Scripts\Temp\PanelTests.cs" />

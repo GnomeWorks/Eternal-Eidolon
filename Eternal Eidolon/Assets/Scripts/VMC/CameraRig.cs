@@ -7,8 +7,6 @@ public class CameraRig : MonoBehaviour
 	Transform _transform;
 
 	Vector3 targetVec;
-	Quaternion targetRot;
-	Quaternion originRot;
 	
 	//float lerpTime = .5f;
 	//float curLerpTime = 0f;
@@ -26,27 +24,9 @@ public class CameraRig : MonoBehaviour
 		// want to handle camera rotation... looking to use "q" and "e" for this, for now
 
 		if(Input.GetKeyDown(KeyCode.Q) && !rotatingMapQ && !rotatingMapE /*&& curLerpTime == 0f*/)
-		{
-			targetVec = _transform.eulerAngles;
-			targetVec.y += 90f;
-
-			originRot = _transform.rotation;
-			targetRot = _transform.rotation;
-			targetRot.y += 90f;
-
 			rotatingMapQ = true;
-		}
 		else if(Input.GetKeyDown(KeyCode.E) && !rotatingMapQ && !rotatingMapE /*&& curLerpTime == 0f*/)
-		{
-			targetVec = _transform.eulerAngles;
-			targetVec.y -= 90f;
-
-			originRot = _transform.rotation;
-			targetRot = _transform.rotation;
-			targetRot.y -= 90f;
-
 			rotatingMapE = true;
-		}
 		else if (follow)
 			_transform.position = Vector3.Lerp(_transform.position, follow.position, speed * Time.deltaTime);
 
@@ -55,11 +35,11 @@ public class CameraRig : MonoBehaviour
 			Vector3 newAngle = _transform.eulerAngles;
 
 			if(rotatingMapQ)
-				newAngle.y += speed;
+				newAngle.y += 3f;
 			else if(rotatingMapE)
-				newAngle.y -= speed;
+				newAngle.y -= 3f;
 
-			distRemain -= speed;
+			distRemain -= 3f;
 
 			_transform.eulerAngles = newAngle;
 
