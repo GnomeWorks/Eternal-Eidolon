@@ -1,0 +1,78 @@
+EE Notes
+
+-- Name? 
+	Should it be "EE Tactics" or just "EE"?
+	
+-- Platform?
+	CRPG seems most reasonable, but cross-platform should also be a thing. After all, separation of front-end and actual functionality is a thing.
+	
+	Considering that we want to do blockchain to reduce the need for servers, CRPG is the obvious choice to start with, but we could go with mobile after a bit.
+	
+-- Blockchain?
+	The way to incentivize people using their machines for validation is to provide in-game currency to buy stuff - things like levels, or units that start better than garbage. For obvious reasons, this stuff should also be purchaseable with RMT... yeah, those transactions can be tracked on the chain, its fine.
+	
+	This stuff can absolutely not be pay-to-win in any way, shape, or form. Give you a leg up on getting to level cap? Yes. Getting more units? Yes. Getting better gear or locations or some crap? Never. *Never*.
+	
+	doing blockchain math will earn you totems... i mean really the way to do this is one totem per thing, right? well crap,
+	actually there are two tasks here: run the calc (hard to calculate), help verify (easy to check). So we could hand out
+	some number of totems for whoever wins the calc, and then 1 totem for verification.
+	
+-- Solo content?
+	Seems pretty clear to me the game can't be all about PvP matchups: there needs to be solo content of some flavor, as well, if only so that if there are only two players, and they're mismatched, people still have incentive to play.
+	
+	I'm thinking a few different things, here. We could do PvE matchups, the idea there being quick and easy, but the rewards are going to be minimal.
+	
+	Dungeons, though, are a good idea, and help reinforce the setting (which is Trinity, naturally). We can use procedural generation to produce the dungeons: this seems like a better idea than just having a set list, so that you can't game the system, and increases replayability.
+	
+	So this might be some kind of like daily or weekly deal. You might get like three missions a day or whatever that give increased rewards, like "clear out the tam-tara deepcroft and get 5k extra gold" or whatev.
+	
+	-- Dungeon Thoughts
+	
+	This needs to be more fleshed out, and could also be a significant draw.
+	
+	The idea here is that this aspect is a dungeon crawler, so you keep the iso grid and all that, but can interact with the environment. When the combat
+	music starts, we switch to combat mode.
+	
+	So your group might be represented as a single dude on the map, just for ease of use, but you have some kind of "formation" setup that when the combat
+	music starts, you immediately go out into that and do the combat.
+	
+-- Modes?
+	Game modes in the PvP needs to be a thing: that's the primary draw here, I think, so we need a bit of variety.
+	
+	== PVP ==
+	Annihilation  - defeat all foes
+	Determination - lasts for X time, whoever has most left at time wins
+	Execution     - defeat the leader
+	Fortification - one player on D, one on O; D holds a place for X time
+	Infiltration  - one player on D, one on O; O needs to reach place/thing in X time 
+	Preservation  - protect a thing while destroying opponent's thing
+	Usurpation    - less PvP, more PvPvE: waves of NPCs, whoever beats most at time wins
+	
+-- Campaign?
+	As neat as it would be, I don't think this could be a thing to roll out initially. This is more focused on the tactical bit, not the story.
+	
+	if this turns out to be gangbusters? we could do a campaign, sure. but for now... focus on the little bits.
+	
+-- Currencies?
+	Gold		obviously a thing. Main in-game currency, use it to buy typical stuff.
+					units (start at level 1)
+					gear (basic)
+	Mox			special in-game currency, use to buy cool stuff or upgrade more powerful junk.
+					gear (force items)
+					more powerful abilities (to buy, not per use - that'd be crazytown)
+	Totem		RMT/mining currency, use to buy levels or rez dead units.
+					1 totem = 1 xp (so we'll need to calibrate xp needs)
+					can rez dead units, totem cost = 1/2 xp total (or something).
+					
+-- rollout?
+	for starters, we need to start small. standard fantasy stuff, but... plus a little bit.
+	
+	== species ==					== jobs ==
+	human							archer
+	elf								defender
+	dwarf							einhander
+	goblin							unfettered
+									mage
+	esper							psion
+	artilect						engineer
+	iolanthe (renamed shardmind)	
